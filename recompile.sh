@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if ! [ "$1" ]; then
     echo "usage to recompile: $0 <file.apk>"

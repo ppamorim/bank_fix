@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if ! [ "$1" ]; then
     echo "usage decompile: $0 <file.apk>"

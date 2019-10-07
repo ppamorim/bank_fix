@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # if ! [ "$1" ]; then
 #     echo "usage to recompile: $0 <file.apk>"
@@ -48,8 +48,8 @@ apps=(
 echo "Removing blacklisted apps"
 
 for app in "${apps[@]}"; do
-    find . -type f -name "$FOO.smali" -print0 | xargs -0 sed -i '' -e "s/\"$app\"/\"\"/g";
-    find . -type f -name "$BAR.smali" -print0 | xargs -0 sed -i '' -e "s/\"$app\"/\"\"/g";
+    find . -type f -name "$FOO.smali" -print0 | xargs -0 sed -i -e "s/\"$app\"/\"\"/g";
+    find . -type f -name "$BAR.smali" -print0 | xargs -0 sed -i -e "s/\"$app\"/\"\"/g";
 done
 
 echo "Blacklisted apps removed"
@@ -81,8 +81,8 @@ paths=(
 echo "Removing paths"
 
 for path in "${paths[@]}"; do
-    find . -type f -name "$FOO.smali" -print0 | xargs -0 sed -i '' -e "s+\"$path\"+\"\"+g";
-    find . -type f -name "$BAR.smali" -print0 | xargs -0 sed -i '' -e "s+\"$path\"+\"\"+g";
+    find . -type f -name "$FOO.smali" -print0 | xargs -0 sed -i -e "s+\"$path\"+\"\"+g";
+    find . -type f -name "$BAR.smali" -print0 | xargs -0 sed -i -e "s+\"$path\"+\"\"+g";
 done
 
 echo "Paths removed"
@@ -102,8 +102,8 @@ suPaths=(
 echo "Removing SU paths"
 
 for suPath in "${suPaths[@]}"; do 
-    find . -type f -name "$FOO.smali" -print0 | xargs -0 sed -i '' -e "s+\"$suPath\"+\"\"+g";
-    find . -type f -name "$BAR.smali" -print0 | xargs -0 sed -i '' -e "s+\"$suPath\"+\"\"+g";
+    find . -type f -name "$FOO.smali" -print0 | xargs -0 sed -i -e "s+\"$suPath\"+\"\"+g";
+    find . -type f -name "$BAR.smali" -print0 | xargs -0 sed -i -e "s+\"$suPath\"+\"\"+g";
 done
 
 miscs=(
@@ -112,8 +112,8 @@ miscs=(
 )
 
 for misc in "${miscs[@]}"; do 
-    find . -type f -name "$FOO.smali" -print0 | xargs -0 sed -i '' -e "s+\"$misc\"+\"\"+g";
-    find . -type f -name "$BAR.smali" -print0 | xargs -0 sed -i '' -e "s+\"$misc\"+\"\"+g";
+    find . -type f -name "$FOO.smali" -print0 | xargs -0 sed -i -e "s+\"$misc\"+\"\"+g";
+    find . -type f -name "$BAR.smali" -print0 | xargs -0 sed -i -e "s+\"$misc\"+\"\"+g";
 done
 
 echo "SU paths removed"
