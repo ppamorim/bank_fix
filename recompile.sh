@@ -12,7 +12,7 @@ rm -rf smali/build
 
 apktool b -f smali/ -o $fn.unaligned.apk
 jarsigner -verbose -sigalg MD5withRSA -digestalg SHA1 -keystore ~/.android/debug.keystore  -storepass android  $fn.unaligned.apk  androiddebugkey
-./zipalign -v 4 $fn.unaligned.apk $fn.smali.apk
+zipalign -v 4 $fn.unaligned.apk $fn.smali.apk
 rm -rf smali/build
 
 echo "Recompile done."
