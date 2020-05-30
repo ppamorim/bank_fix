@@ -27,7 +27,7 @@ docker build --rm -t ppamorim/bank_fix
 
 Once you have the image on your machine, you can run it using:
 ```bash
-docker run -it -v `pwd`:/app ppamorim/bank_fix bork FOO BAR
+docker run --rm -v `pwd`:/app ppamorim/bank_fix bork FOO BAR
 ```
 Here, we assume the name of the apk is *bork.apk*, with *FOO* and *BAR* being arguments.  
 Note that the `-v` mounts your **current directory** inside the running Docker container.  
