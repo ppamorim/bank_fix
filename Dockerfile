@@ -1,13 +1,13 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 WORKDIR /app
 
-RUN apt-get -qq update && \
-    apt-get install -y apktool && \
-    apt-get install -y zipalign
+RUN apt update -qq && \
+    apt install -y \
+    openjdk-11-jdk-headless \
+    apktool \
+    zipalign
 
-COPY . .
+COPY *.sh ./
 
-RUN ./fix.sh app
-
-RUN ls
+ENTRYPOINT ["./fix.sh"]
