@@ -22,7 +22,7 @@ You can build/use the image specified in this repository.
 
 If you're building the image yourself, you can use:
 ```bash
-docker build --rm -t ppamorim/bank_fix
+docker build --rm -t ppamorim/bank_fix .
 ```
 
 Once you have the image on your machine, you can run it using:
